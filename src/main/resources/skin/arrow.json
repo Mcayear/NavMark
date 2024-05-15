@@ -1,0 +1,23 @@
+{
+	"geometry.jiantou": {
+		"bones": [
+			{
+				"name": "head",
+		        "neverRender": false,
+		        "reset": false,
+		        "mirror": false,
+		        "material": "alpha",
+		        "parent": "head",
+				"pivot": [0, 32, 0],
+				"cubes": [
+					{"origin": [-2, 32, -4], "size": [3, 1, 1], "uv": [0, 0]},
+					{"origin": [-1, 32, -5], "size": [1, 1, 1], "uv": [8, 0]},
+					{"origin": [-3, 32, -3], "size": [5, 1, 1], "uv": [0, 4]},
+					{"origin": [-4, 32, -2], "size": [7, 1, 1], "uv": [0, 2]},
+					{"origin": [-5, 32, -1], "size": [9, 1, 1], "uv": [0, 6]},
+					{"origin": [-2, 32, 0], "size": [3, 1, 7], "uv": [0, 8]}
+				]
+			}
+		]
+	}
+}

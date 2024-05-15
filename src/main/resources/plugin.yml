@@ -1,0 +1,20 @@
+#name, main, version and api are required
+name: ExamplePlugin-Maven
+main: cn.vusv.plugin.NavMarkPlugin
+#remember version and api is string, don't write it like this: 1.0.0, or there will be an exception
+version: "1.0.0"
+api: ["1.0.5"]
+load: POSTWORLD
+author: Mcayear
+# Authors and author will be added together in one list.
+authors: ["Mcayear"]
+description: 导航标志物
+website: https://github.com/Mcayear/NavMark
+# These dependencies are required for the plugin to start.
+#depend: ["OtherPlugin", "ThisPlugin"]
+# These dependencies are not required.
+softdepend: []
+# Log prefix in console
+prefix: "NavMark"
+# Plugin will be loaded before these. Any cyclic loadbefore's or dependencies's will throw errors!
+loadbefore: []
