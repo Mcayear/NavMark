@@ -3,8 +3,11 @@ package cn.vusv.plugin.entity;
 import cn.nukkit.Player;
 import cn.nukkit.entity.EntityHuman;
 import cn.nukkit.entity.data.Skin;
+import cn.nukkit.event.entity.EntityDamageEvent;
 import cn.nukkit.level.Position;
 import cn.nukkit.level.format.FullChunk;
+import cn.nukkit.math.AxisAlignedBB;
+import cn.nukkit.math.Vector2;
 import cn.nukkit.math.Vector3;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.vusv.plugin.NavMarkPlugin;
@@ -46,26 +49,55 @@ public class NavMarkNPC extends EntityHuman {
         this.setScale(1.0f);
     }
 
+    public void lookAt(Position pos) {
+        double xdiff = pos.x - this.x;
+        double zdiff = pos.z - this.z;
+        double angle = Math.atan2(zdiff, xdiff);
+        double yaw = ((angle * 180) / Math.PI) - 90;
+        double ydiff = pos.y - this.y;
+        Vector2 v = new Vector2(this.x, this.z);
+        double dist = v.distance(pos.x, pos.z);
+        angle = Math.atan2(dist, ydiff);
+        double pitch = ((angle * 180) / Math.PI) - 90;
+        this.yaw = yaw;
+        this.headYaw = yaw;
+        this.pitch = pitch;
+    }
+
+    @Override
+    public boolean attack(EntityDamageEvent source) {
+        return true;
+    }
+
     @Override
     public boolean entityBaseTick(int tickDiff) {
         if (this.closed) {
             return false;
         }
-        boolean hasUpdate = super.entityBaseTick(tickDiff);
-        Vector3 vec3 = getMarkPos(this.master);
-        this.move(this.getX() - vec3.x, this.getY() - vec3.y, this.getZ() - vec3.z);
-        this.updateMovement();
+        Position vec3 = getMarkPos(this.master);
+        this.teleport(vec3);
+        lookAt(targetPosition);
         double dist = targetPosition.distance(master.getPosition());
 
-        if (dist < 2) {
+        AxisAlignedBB bb = this.getBoundingBox();
+        final double x = this.getX() + 100, y = this.getY() + 100, z = this.getZ() + 100;
+        final float dy = this.getHeight();
+        bb.setMaxX(x);
+        bb.setMinX(x);
+        bb.setMaxZ(z);
+        bb.setMinZ(z);
+        bb.setMaxY(y + dy);
+        bb.setMinY(y);
+
+        if (dist < NavMarkPlugin.RADIUS) {
             master.sendMessage("目标 " + targetName + " 在您附近，导航标志物已自动关闭。");
             NavMarkPlugin.playerDataMap.remove(master.getName());
             NavMarkPlugin.navMarkNpcData.remove(this.getId());
             this.close();
             return false;
         }
-        this.setNameTag(targetName + " §e" + dist + "§rm");
-        return hasUpdate;
+        this.setNameTag(targetName + " §e" + String.format("%.1f", dist) + "§rm");
+        return true;
     }
 
 }

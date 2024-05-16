@@ -1,6 +1,7 @@
 package cn.vusv.plugin;
 
 import cn.nukkit.Player;
+import cn.nukkit.level.Position;
 import cn.nukkit.math.Vector3;
 import com.google.common.base.Strings;
 
@@ -32,7 +33,7 @@ public class Utils {
         return Boolean.TRUE;
     }
 
-    public static Vector3 getMarkPos(Player player) {
+    public static Position getMarkPos(Player player) {
         // 垂直 pitch, 水平 yaw
         if (NavMarkPlugin.ENABLE_PITCH) {
             // 获取 y, r
