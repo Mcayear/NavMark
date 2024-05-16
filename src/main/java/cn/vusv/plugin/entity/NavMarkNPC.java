@@ -80,7 +80,7 @@ public class NavMarkNPC extends EntityHuman {
         double dist = targetPosition.distance(master.getPosition());
 
         AxisAlignedBB bb = this.getBoundingBox();
-        final double x = this.getX() + 100, y = this.getY() + 100, z = this.getZ() + 100;
+        final double x = this.getX(), y = this.getY(), z = this.getZ();
         final float dy = this.getHeight();
         bb.setMaxX(x);
         bb.setMinX(x);
