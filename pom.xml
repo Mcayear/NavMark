@@ -13,6 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <lib.GameCore.version>1.6.13</lib.GameCore.version>
     </properties>
 
     <repositories>
@@ -38,6 +39,13 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>RELEASE</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.lanink</groupId>
+            <artifactId>MemoriesOfTime-GameCore</artifactId>
+            <version>${lib.GameCore.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

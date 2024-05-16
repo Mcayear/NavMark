@@ -15,7 +15,7 @@ public class PluginConfig {
 
         NavMarkPlugin.targetMap.clear();
         ConfigSection targets = cfg.getSection("target");
-        for (String key : targets.getKeys()) {
+        for (String key : targets.getKeys(false)) {
             ConfigSection target = targets.getSection(key);
             String levelName = target.getString("level");
             int x = target.getInt("x");

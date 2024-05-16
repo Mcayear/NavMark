@@ -25,6 +25,7 @@ public class NavMarkNPC extends EntityHuman {
     @Getter
     public String targetName;
 
+    @Setter
     @Getter
     public Position targetPosition;
 

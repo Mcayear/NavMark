@@ -1,5 +1,6 @@
 package cn.vusv.plugin;
 
+import cn.lanink.gamecore.utils.NukkitTypeUtils;
 import cn.nukkit.entity.Entity;
 import cn.nukkit.lang.PluginI18n;
 import cn.nukkit.lang.PluginI18nManager;
@@ -53,7 +54,7 @@ public class NavMarkPlugin extends PluginBase {
     }
 
     public void init() {
-        this.saveConfig();
+        this.saveResource("config.yml");
         this.saveResource("skin/arrow.json", "skin/arrow.json", false);
         this.saveResource("skin/arrow.png", "skin/arrow.png", false);
         PluginConfig.init();
@@ -65,6 +66,10 @@ public class NavMarkPlugin extends PluginBase {
         NavMarkNPC npc = new NavMarkNPC(position.getChunk(), Entity.getDefaultNBT(position), targetName, new Clothes("arrow"));
         npc.setMaster(player);
         npc.setTargetName(targetName);
+        npc.setTargetPosition(targetMap.get(targetName));
+        if (NukkitTypeUtils.getNukkitType() == NukkitTypeUtils.NukkitType.MOT) {
+            npc.setCanBeSavedWithChunk(false);
+        }
         npc.spawnTo(player);
         // 省略代码示例
         return npc;

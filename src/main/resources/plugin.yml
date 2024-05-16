@@ -1,5 +1,5 @@
 #name, main, version and api are required
-name: ExamplePlugin-Maven
+name: NavMark
 main: cn.vusv.plugin.NavMarkPlugin
 #remember version and api is string, don't write it like this: 1.0.0, or there will be an exception
 version: "1.0.0"
@@ -12,8 +12,8 @@ description: 导航标志物
 website: https://github.com/Mcayear/NavMark
 # These dependencies are required for the plugin to start.
 #depend: ["OtherPlugin", "ThisPlugin"]
-# These dependencies are not required.
-softdepend: []
+softdepend:
+  - "MemoriesOfTime-GameCore"
 # Log prefix in console
 prefix: "NavMark"
 # Plugin will be loaded before these. Any cyclic loadbefore's or dependencies's will throw errors!
