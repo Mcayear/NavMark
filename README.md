@@ -21,7 +21,7 @@
 
 ```yml
 radius: 3 # 标志物离玩家的距离
-enablePitch: true # 可用的目标，也就是标志物名例如 卫兵。
+enablePitch: true # 启用垂直跟随，若开启则玩家垂直视角移动也会跟着移动
 target:
   装备精工师: # 目标点名称
     level: rpgx

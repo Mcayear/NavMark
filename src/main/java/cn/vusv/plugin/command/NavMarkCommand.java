@@ -3,6 +3,8 @@ package cn.vusv.plugin.command;
 import cn.nukkit.Player;
 import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandSender;
+import cn.nukkit.command.data.CommandParamType;
+import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.entity.Entity;
 import cn.nukkit.level.Position;
 import cn.vusv.plugin.NavMarkPlugin;
@@ -13,6 +15,21 @@ public class NavMarkCommand extends Command {
 
     public NavMarkCommand() {
         super("navmark", "导航标志物", "/navmark <玩家名> [标志物名]");
+
+        this.getCommandParameters().clear();
+
+        this.getCommandParameters().put("help", new CommandParameter[]{
+                CommandParameter.newEnum("help", false, new String[]{"help"})
+        });
+
+        this.getCommandParameters().put("reload", new CommandParameter[]{
+                CommandParameter.newEnum("reload", false, new String[]{"reload"})
+        });
+
+        this.getCommandParameters().put("switch", new CommandParameter[]{
+                CommandParameter.newType("player", true, CommandParamType.TARGET),
+                CommandParameter.newType("itemId", false, CommandParamType.STRING)
+        });
     }
 
     @Override
