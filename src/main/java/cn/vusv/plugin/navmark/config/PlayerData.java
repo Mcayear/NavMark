@@ -1,4 +1,4 @@
-package cn.vusv.plugin.config;
+package cn.vusv.plugin.navmark.config;
 
 
 import cn.nukkit.level.Position;

@@ -1,4 +1,4 @@
-package cn.vusv.plugin.entity;
+package cn.vusv.plugin.navmark.entity;
 
 import cn.nukkit.Player;
 import cn.nukkit.entity.EntityHuman;
@@ -8,16 +8,15 @@ import cn.nukkit.level.Position;
 import cn.nukkit.level.format.FullChunk;
 import cn.nukkit.math.AxisAlignedBB;
 import cn.nukkit.math.Vector2;
-import cn.nukkit.math.Vector3;
 import cn.nukkit.nbt.tag.CompoundTag;
-import cn.vusv.plugin.NavMarkPlugin;
-import cn.vusv.plugin.others.Clothes;
+import cn.vusv.plugin.navmark.NavMarkPlugin;
+import cn.vusv.plugin.navmark.others.Clothes;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.nio.charset.StandardCharsets;
 
-import static cn.vusv.plugin.Utils.getMarkPos;
+import static cn.vusv.plugin.navmark.Utils.getMarkPos;
 
 public class NavMarkNPC extends EntityHuman {
     @Setter

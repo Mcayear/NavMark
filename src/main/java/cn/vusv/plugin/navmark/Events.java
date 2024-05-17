@@ -1,11 +1,11 @@
-package cn.vusv.plugin;
+package cn.vusv.plugin.navmark;
 
 import cn.nukkit.event.EventHandler;
 import cn.nukkit.event.Listener;
 import cn.nukkit.event.player.PlayerQuitEvent;
 import cn.nukkit.entity.Entity;
 import cn.nukkit.Player;
-import cn.vusv.plugin.config.PlayerData;
+import cn.vusv.plugin.navmark.config.PlayerData;
 
 public class Events implements Listener {
 

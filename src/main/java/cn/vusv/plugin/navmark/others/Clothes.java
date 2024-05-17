@@ -1,10 +1,10 @@
-package cn.vusv.plugin.others;
+package cn.vusv.plugin.navmark.others;
 
 import cn.nukkit.Server;
 import cn.nukkit.entity.data.Skin;
 import cn.nukkit.utils.Config;
-import cn.vusv.plugin.NavMarkPlugin;
-import cn.vusv.plugin.Utils;
+import cn.vusv.plugin.navmark.NavMarkPlugin;
+import cn.vusv.plugin.navmark.Utils;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

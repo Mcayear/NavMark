@@ -1,11 +1,11 @@
-package cn.vusv.plugin.config;
+package cn.vusv.plugin.navmark.config;
 
 import cn.nukkit.Server;
 import cn.nukkit.level.Level;
 import cn.nukkit.level.Position;
 import cn.nukkit.utils.Config;
 import cn.nukkit.utils.ConfigSection;
-import cn.vusv.plugin.NavMarkPlugin;
+import cn.vusv.plugin.navmark.NavMarkPlugin;
 
 public class PluginConfig {
     public static void init() {

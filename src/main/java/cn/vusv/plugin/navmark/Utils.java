@@ -1,8 +1,7 @@
-package cn.vusv.plugin;
+package cn.vusv.plugin.navmark;
 
 import cn.nukkit.Player;
 import cn.nukkit.level.Position;
-import cn.nukkit.math.Vector3;
 import com.google.common.base.Strings;
 
 import java.io.IOException;

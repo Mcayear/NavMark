@@ -1,4 +1,4 @@
-package cn.vusv.plugin.command;
+package cn.vusv.plugin.navmark.command;
 
 import cn.nukkit.Player;
 import cn.nukkit.command.Command;
@@ -7,9 +7,9 @@ import cn.nukkit.command.data.CommandParamType;
 import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.entity.Entity;
 import cn.nukkit.level.Position;
-import cn.vusv.plugin.NavMarkPlugin;
-import cn.vusv.plugin.config.PlayerData;
-import cn.vusv.plugin.config.PluginConfig;
+import cn.vusv.plugin.navmark.NavMarkPlugin;
+import cn.vusv.plugin.navmark.config.PlayerData;
+import cn.vusv.plugin.navmark.config.PluginConfig;
 
 public class NavMarkCommand extends Command {
 

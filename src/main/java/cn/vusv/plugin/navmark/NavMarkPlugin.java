@@ -1,4 +1,4 @@
-package cn.vusv.plugin;
+package cn.vusv.plugin.navmark;
 
 import cn.lanink.gamecore.utils.NukkitTypeUtils;
 import cn.nukkit.entity.Entity;
@@ -7,11 +7,11 @@ import cn.nukkit.lang.PluginI18nManager;
 import cn.nukkit.level.Position;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.Player;
-import cn.vusv.plugin.command.NavMarkCommand;
-import cn.vusv.plugin.config.PlayerData;
-import cn.vusv.plugin.config.PluginConfig;
-import cn.vusv.plugin.entity.NavMarkNPC;
-import cn.vusv.plugin.others.Clothes;
+import cn.vusv.plugin.navmark.command.NavMarkCommand;
+import cn.vusv.plugin.navmark.config.PlayerData;
+import cn.vusv.plugin.navmark.config.PluginConfig;
+import cn.vusv.plugin.navmark.entity.NavMarkNPC;
+import cn.vusv.plugin.navmark.others.Clothes;
 import lombok.Getter;
 
 import java.awt.image.BufferedImage;
